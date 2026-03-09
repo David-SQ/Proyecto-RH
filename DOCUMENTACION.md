@@ -891,7 +891,7 @@ La versión 0.82 de Flet introduce cambios importantes respecto a versiones ante
 |--------|-------|-----------|
 | Botones | `ft.ElevatedButton(...)` | `ft.Button(...)` |
 | Dropdown evento | `on_change` | `on_select` |
-| FilePicker montaje | `page.overlay.append(fp)` | `page.services.append(fp)` (antes de `page.add()`) |
+| FilePicker montaje | `page.services.append(fp)` | `page.services.append(fp)` (antes de `page.add()`) |
 | FilePicker operaciones | Síncronas | Asíncronas (`await fp.pick_files()`) |
 | Diálogos | `page.dialog = dlg; dlg.open = True` | `page.show_dialog(dlg)` / `page.pop_dialog()` |
 
