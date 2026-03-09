@@ -2,8 +2,16 @@
 main.py — Aplicación de Gestión de Contratación con Flet + PostgreSQL.
 """
 
-import flet as ft
+import sys
 import os
+
+# 1. Ajuste del Path: Le indicamos a Python dónde está la raíz del proyecto
+ruta_raiz = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if ruta_raiz not in sys.path:
+    sys.path.append(ruta_raiz)
+
+# Importaciones estándar
+import flet as ft
 import re
 import json
 import shutil
@@ -11,17 +19,11 @@ import threading
 import webbrowser
 import urllib.parse
 
-from database import (
-    Database, cargar_config_local, guardar_config_local,
-)
-from cv_converter import (
-    extraer_texto_pdf, procesar_con_gemini, actualizar_json_con_gemini,
-    generar_pdf_entelgy, GEMINI_OK,
-)
-from email_manager import (
-    GraphClient, generar_cuerpo_solicitud, procesar_correos_entrantes,
-    codigo_candidato, DOCUMENTO_A_CODIGO,
-)
+# 2. Nuevas importaciones de tu módulo CFE
+from core.CFE.database import Database, cargar_config_local, guardar_config_local
+from core.CFE.cv_parser import extraer_texto_pdf, procesar_con_gemini, actualizar_json_con_gemini, GEMINI_OK
+from core.CFE.pdf_builder import generar_pdf_entelgy
+from core.CFE.email_manager import GraphClient, generar_cuerpo_solicitud, procesar_correos_entrantes, codigo_candidato, DOCUMENTO_A_CODIGO
 
 # ════════════════════════════════════════════════════════════
 #  Colores y constantes

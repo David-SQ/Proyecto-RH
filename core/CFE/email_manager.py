@@ -45,7 +45,7 @@ GRAPH_SCOPES = ["Mail.ReadWrite", "Mail.Send"]
 GRAPH_BASE = "https://graph.microsoft.com/v1.0"
 
 _TOKEN_CACHE_FILE = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)), "..", "msal_token_cache.json"
+    os.path.dirname(os.path.abspath(__file__)), "..", "..", "msal_token_cache.json"
 )
 
 

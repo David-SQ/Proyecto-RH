@@ -27,7 +27,7 @@ DOCUMENTOS_REQUERIDOS = [
 ]
 
 CONFIG_LOCAL_FILE = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)), "..", "db_config.json"
+    os.path.dirname(os.path.abspath(__file__)), "..", "..", "db_config.json"
 )
 
 DEFAULT_DB_CONFIG = {
